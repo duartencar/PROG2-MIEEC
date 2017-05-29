@@ -7,19 +7,46 @@
 
 lista* descobre_caminho (grafo *g, int origem, int destino, int obrigatorio)
 {
-	/* prob 2.1 - a implementar */
-	
-	return NULL;
+	if(g == NULL || origem < 1 || destino < 1 || obrigatorio < 1)
+		return NULL;
+
+	lista *aRetornar = lista_nova();
+
+	char toInsert[10];
+
+	int i, nPassos;
+
+	int *caminho = grafo_bfs(g, obrigatorio, destino, &nPassos);
+
+	for(i = nPassos - 1; i > 0 ; i--)
+	{
+		sprintf(toInsert, "%d", caminho[i]);
+
+		printf("%s\n", toInsert);
+
+		lista_insere(aRetornar, toInsert, 0 );
+	}
+
+	caminho = grafo_bfs(g, origem, obrigatorio, &nPassos);
+
+	for(i = nPassos - 1; i > -1 ; i--)
+	{
+		sprintf(toInsert, "%d", caminho[i]);
+
+		lista_insere(aRetornar, toInsert, 0);
+	}
+
+	return aRetornar;
 }
 
 int simula_acontecimentos(lista *acoes, lista *tempos, int n)
 {
-    /* prob 2.2 - a implementar */    
+    /* prob 2.2 - a implementar */
 
     return 0;
 }
 
-/* Aqui começa o código de teste. Não modificar! */ 
+/* Aqui começa o código de teste. Não modificar! */
 
 int main()
 {
@@ -62,7 +89,7 @@ int main()
 		FILE *f;
 		char acao[21], tempo[5];
 		lista *acoes, *tempos;
-		
+
 		printf("* Problema 2.2 *\n");
 
 		f = fopen("acoes.txt", "r");
