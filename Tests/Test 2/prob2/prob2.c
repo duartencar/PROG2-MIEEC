@@ -41,9 +41,22 @@ lista* descobre_caminho (grafo *g, int origem, int destino, int obrigatorio)
 
 int simula_acontecimentos(lista *acoes, lista *tempos, int n)
 {
-    /* prob 2.2 - a implementar */
+	if(acoes == NULL || tempos == NULL || n < 1)
+		return 0;
 
-    return 0;
+  elemento_lista *a, *t;
+
+	int i;
+
+	heap *h = heap_nova(20);
+
+	for(a = acoes->raiz, t = tempos->raiz; a != NULL || t != NULL; a = a->proximo, t = t->proximo)
+		heap_insere(h, a->str, atoi(t->str));
+
+	for(i = 0; i < n; i++)
+		printf("%d: %s\n", i + 1, heap_remove(h));
+
+  return 1;
 }
 
 /* Aqui começa o código de teste. Não modificar! */
