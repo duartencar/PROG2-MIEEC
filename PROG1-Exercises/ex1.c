@@ -97,8 +97,7 @@ void stats(int *tempos, int n, int *min, int *max, float *med)
 
 int main()
 {
-  //Vetor de duas dimensões com espaço para 100 acessos.
-  //tem dois índices para guardar uma entrada e uma saída.
+  //Vetor com 100 valores int
   int t[MAXIMO_NUMERO_DE_ACESSOS];
 
   int numeroDeAcessos;
