@@ -58,41 +58,41 @@ int ler_tempos(int *tempos)
 
 void stats(int *tempos, int n, int *min, int *max, float *med)
 {
-  int i;
-
-  printf(" %d valores\n", n);
-
-  for(i = 0; i < n - 1; i++)
-    printf("%d\n", tempos[i]);
-
-  int minimo;// = tempos[0]; //Serve apenas para termos valores com que comparar
-
-  int maximo;// = tempos[0]; //podemos começar por i = 1
-
-
-
-  printf("%d %d", minimo, maximo);
-
-  printf("calcular");
-
-  float total = 0;
-
-  for(i = 1; i < n; i++)
-  {
-    total += tempos[i]; //adicionamos o tempo tomado para depois calcular a media
-
-    if(tempos[i] < *min)
-      *min = tempos[i];
-    else if(tempos[i] > *max)
-      *max = tempos[i];
-    else
-      continue;
-  }
-
-
-  min = &tempos[0];
-  max = &tempos[0];
-  *med = total / n;
+  // int i;
+  //
+  // printf(" %d valores\n", n);
+  //
+  // for(i = 0; i < n - 2; i++)
+  //   printf("%d\n", tempos[i]);
+  //
+  // int minimo;// = tempos[0]; //Serve apenas para termos valores com que comparar
+  //
+  // int maximo;// = tempos[0]; //podemos começar por i = 1
+  //
+  //
+  //
+  // printf("%d %d", minimo, maximo);
+  //
+  // printf("calcular");
+  //
+  // float total = 0;
+  //
+  // // for(i = 1; i < n; i++)
+  // // {
+  // //   total += tempos[i]; //adicionamos o tempo tomado para depois calcular a media
+  // //
+  // //   if(tempos[i] < *min)
+  // //     *min = tempos[i];
+  // //   else if(tempos[i] > *max)
+  // //     *max = tempos[i];
+  // //   else
+  // //     continue;
+  // // }
+  //
+  //
+  // min = &tempos[0];
+  // max = &tempos[0];
+  // *med = total / n;
 }
 
 int main()
@@ -111,12 +111,12 @@ int main()
 
   printf("Número de acessos: %d\n", numeroDeAcessos);
 
-  // for(i = 0; i < numeroDeAcessos; i++)
-  //   printf("%d\n", t[i]);
+  for(i = 0; i < numeroDeAcessos; i++)
+    printf("%d\n", t[i]);
 
   stats(t, numeroDeAcessos, minimo, maximo, media);
 
-  printf("Min: %d | Max: %d | Med: %f", *minimo, *maximo, *media);
+  //printf("Min: %d | Max: %d | Med: %f", *minimo, *maximo, *media);
 
   return 0;
 }
