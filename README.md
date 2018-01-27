@@ -1,1 +1,1 @@
-# PROG2-MIEEC
+# PROG2-MIEEC [![Codacy Badge](https://api.codacy.com/project/badge/Grade/94facc6f9e4b48839d2d3a8c7bf4aaee)](https://www.codacy.com/app/duartencar/PROG2-MIEEC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=duartencar/PROG2-MIEEC&amp;utm_campaign=Badge_Grade)
